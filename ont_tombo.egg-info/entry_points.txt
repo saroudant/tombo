@@ -1,0 +1,2 @@
+[console_scripts]
+tombo = tombo.__main__:main
