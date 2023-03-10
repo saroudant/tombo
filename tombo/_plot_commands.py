@@ -972,10 +972,8 @@ def get_r_raw_signal_data(
                 # Read.extend(list(repeat(
                 #     re.findall('\'([a-z0-9\-]*)\'', str(r_data.read_id))[0] + '_' + group_num, b_end - b_start))
                 # )
-                if np.random.rand() < 0.01:
-                    print(str(r_data.read_id), re.findall('\'([a-z0-9\-]+)\'', str(r_data.read_id))[0])
                 Read.extend(list(repeat(
-                    re.findall('([a-z0-9\-]+)', str(r_data.read_id))[0] + '_' + group_num, b_end - b_start))
+                    re.findall('\'([a-z0-9\-]+)\'', str(r_data.read_id))[0] + '_' + group_num, b_end - b_start))
                 )
                 Strand.extend(list(repeat(
                     FWD_STRAND if r_data.strand == '+' else
