@@ -969,6 +969,7 @@ def get_r_raw_signal_data(
                                     b_end-overlap_seg_data[0]])
 
                 # SM: modify this line to change r_num by the read ID.
+                print(str(r_data.read_id))
                 Read.extend(list(repeat(
                     re.findall('\'([a-z0-9\-]*)\'', str(r_data.read_id))[0] + '_' + group_num, b_end - b_start)))
                 Strand.extend(list(repeat(
