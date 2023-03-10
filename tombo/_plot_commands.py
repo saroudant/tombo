@@ -972,6 +972,7 @@ def get_r_raw_signal_data(
                 # Read.extend(list(repeat(
                 #     re.findall('\'([a-z0-9\-]*)\'', str(r_data.read_id))[0] + '_' + group_num, b_end - b_start))
                 # )
+                print(re.findall('([a-z0-9\-]+)', str(r_data.read_id))[0])
                 Read.extend(list(repeat(
                     re.findall('([a-z0-9\-]+)', str(r_data.read_id))[0] + '_' + group_num, b_end - b_start))
                 )
@@ -979,6 +980,7 @@ def get_r_raw_signal_data(
                     FWD_STRAND if r_data.strand == '+' else
                     REV_STRAND, b_end - b_start)))
                 Region.extend(list(repeat(reg_data.reg_id, b_end - b_start)))
+                print(Read)
 
     return r.DataFrame({
         'Position':r.FloatVector(Position),
